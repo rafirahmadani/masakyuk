@@ -1,0 +1,231 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+
+{% block content%}
+<div class="wrapper">
+    <div class="parallax filter-black">
+        <div class="parallax-image">
+            <img src="{% static 'front/img/1.jpeg' %}" alt="..." />
+        </div>
+        <div class="small-info">
+            <h1>Masak Yuk</h1>
+            <h3>Resep makanan Nusantara</h3>
+        </div>
+    </div>
+
+    <div class="section section-description">
+           <div class="container">
+               <h2 class="section-title">Tentang Resep - Resep</h2>
+
+               <div class="row">
+                    <div class="col-md-6">
+                       <h5> Masak Happy </h5>
+                       <p> Memasak adalah kegiatan menyiapkan makanan dengan cara mengolah dan memanaskan bahan makanan agar bahan makanan tersebut bisa dikonsumsi. Memasak terdiri dari berbagai macam metode, teknik, peralatan, dan kombinasi bumbu dapur.  </p>
+                       
+
+                   </div>
+                   <div class="col-md-6">
+                        <div id="description-carousel" class="carousel fade" data-ride="carousel">
+                              <!-- Wrapper for slides -->
+                              <div class="carousel-inner">
+                                <div class="item active">
+                                  <img src="{% static 'front/img/01.jpeg' %}" alt="..." />
+                                </div>
+                                <div class="item">
+                                  <img src="{% static 'front/img/02.webp' %}" alt="..." />
+                                </div>
+                                <div class="item">
+                                  <img src="{% static 'front/img/03.jpeg' %}" alt="..." />
+                                </div>
+                              </div>
+
+                              <ol class="carousel-indicators">
+                                <li data-target="#description-carousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#description-carousel" data-slide-to="1"></li>
+                                <li data-target="#description-carousel" data-slide-to="2"></li>
+                              </ol>
+                        </div>
+                   </div>
+                </div>
+
+                <div class="space-50"></div>
+                <hr>
+                <div class="space-50"></div>
+
+                <div class="row">
+                   <div class="col-md-6">
+                      <div class="img-container">
+                          <img src="{% static 'front/img/04.jpg' %}" alt="..." />
+                      </div>
+                   </div>
+                   <div class="col-md-6">
+                       <h5> Tumis jagung </h5>
+                       <p>  jagung yang biasanya dibuat jadi bakwan Tapi dengan kreativitas sendiri, butiran kecil berwarna kuning ini juga bisa diolah jadi tumis. Hidangan tumis jagungini cocok kalau dijadikan hidangan sehari-hari. </p>
+
+                   </div>
+               </div>
+
+               <hr>
+
+               <div class="col-md-6">
+                <h5>Masak menyenangkan</h5>
+                <p>  "Saya pikir menyiapkan makanan dan memberi makan orang tidak hanya mendatangkan nutrisi bagi tubuh kita, tetapi juga bagi jiwa kita. Memberi makan orang adalah cara mencintai mereka, dengan cara yang sama memberi makan diri kita sendiri adalah cara menghormati ciptaan dan kerapuhan kita sendiri."  </p>
+                 
+
+            </div>
+            <div class="col-md-6">
+                 <div id="description-carousel" class="carousel fade" data-ride="carousel">
+                       <!-- Wrapper for slides -->
+                       <div class="carousel-inner">
+                         <div class="item active">
+                           <img src="{% static 'front/img/05.jpeg' %}" alt="..." />
+                         </div>
+                         <div class="item">
+                           <img src="{% static 'front/img/06.jpeg' %}" alt="..." />
+                         </div>
+                         <div class="item">
+                           <img src="{% static 'front/img/07.jpeg' %}" alt="..." />
+                         </div>
+                       </div>
+
+                       <ol class="carousel-indicators">
+                         <li data-target="#description-carousel" data-slide-to="0" class="active"></li>
+                         <li data-target="#description-carousel" data-slide-to="1"></li>
+                         <li data-target="#description-carousel" data-slide-to="2"></li>
+                       </ol>
+                 </div>
+            </div>
+         </div>
+           </div>
+    </div><!-- section -->
+    <div class="space-50"></div>
+   <hr>
+    <div class="section section-testimonials">
+        <div class="container">
+            <h2 class="section-title"> Kata - kata Makanan </h2>
+             <div id="testimonials-carousel" class="carousel slide" data-ride="carousel">
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                    <div class="item active">
+                      <div class="row">
+                            <div class="col-md-6">
+                                 <div class="card card-plain">
+                                    <div class="content">
+                                        <a target="_blank" href="http://www.creative-tim.com/product/get-shit-done-pro">
+                                            <h4 class="title">"Memasak bersama anak bukan hanya tentang bahan, resep, dan masakan. Itu tentang memanfaatkan imajinasi, pemberdayaan, dan kreativitas." </h4>
+                                        </a>
+                                         <div class="footer">
+                                            <div class="author">
+                                                <a class="card-link" href="#">
+                                                   <img src="{% static 'front/img/rafi.jpeg' %}" alt="..." class="avatar">
+                                                   <span> Rafi Rahmadani </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end card -->
+                             </div>
+                             <div class="col-md-6">
+                                 <div class="card card-plain">
+                                    <div class="content">
+                                            <h4 class="title">
+                                                "Jika kamu suka makanan enak, masak sendiri." 
+                                            </h4>
+
+                                         <div class="footer">
+                                            <div class="author">
+                                                <a class="card-link" target="_blank" href="https://twitter.com/tudorvintilescu">
+                                                   <img src="{% static 'front/img/rafi.jpeg' %}" alt="..." class="avatar">
+                                                   <span> Rafi Rahmadani </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end card -->
+                             </div>
+                        </div> <!-- end row -->
+                    </div>
+                    <div class="item">
+                      <div class="row">
+                          <div class="col-md-6">
+                                <div class="card card-plain">
+                                    <div class="content">
+                                        <a target="_blank" href="">
+                                            <h4 class="title"> "Yang dipercaya ibuku tentang memasak adalah jika kamu bekerja keras dan menjadi makmur, orang lain akan melakukannya untukmu." </h4>
+                                        </a>
+                                         <div class="footer">
+                                            <div class="author">
+                                                <a class="card-link" target="_blank" href="http://www.awwwards.com/">
+                                                   <img src="{% static 'front/img/rafi.jpeg' %}" alt="..." class="avatar">
+                                                   <span> Rafi Rahmadani </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end card -->
+                             </div>
+                             <div class="col-md-6">
+                                 <div class="card card-plain">
+                                    <div class="content">
+                                        <a target="_blank" href="http://www.creative-tim.com/product/get-shit-done-pro">
+                                            <h4 class="title"> masak itu mudah dan gampang asalkan ada niat untuk bergerak untuk masak.</h4>
+                                        </a>
+                                         <div class="footer">
+                                            <div class="author">
+                                                <a class="card-link" target="_blank" href="#">
+                                                   <img src="{% static 'front/img/rafi.jpeg' %}" alt="..." class="avatar">
+                                                   <span> Rafi Rahmadani </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end card -->
+                             </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#testimonials-carousel" data-slide="prev">
+                    <span class="fa fa-angle-left"></span>
+                  </a>
+                  <a class="right carousel-control" href="#testimonials-carousel" data-slide="next">
+                    <span class="fa fa-angle-right"></span>
+                  </a>
+            </div>
+        </div>
+    </div>
+   <hr>
+
+     <div class="social-line">
+         <div class="container">
+            <div class="row">
+                 <div class="col-md-3">
+                     <a href="" class="btn btn-round btn-fill btn-social btn-facebook">
+                         <i class="fa fa-facebook-square"></i> Facebook
+                     </a>
+                 </div>
+                  <div class="col-md-3">
+                     <a href="" class="btn btn-round btn-fill btn-social btn-twitter">
+                         <i class="fa fa-twitter"></i> Twitter
+                     </a>
+                 </div>
+                  <div class="col-md-3">
+                     <a href="" class="btn btn-round btn-fill btn-social btn-google">
+                         <i class="fa fa-google-plus-square"></i> Google+
+                     </a>
+                 </div>
+                 <div class="col-md-3">
+                     <a href="" class="btn btn-round btn-fill btn-social btn-pinterest">
+                         <i class="fa fa-pinterest"></i> Pinterest
+                     </a>
+                 </div>
+            </div>
+         </div>
+     </div>
+
+
+</div> <!-- wrapper -->
+{%endblock content%}

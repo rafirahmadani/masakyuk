@@ -1,0 +1,245 @@
+{% extends 'front/base.html' %} {% load static %} {% block content%}
+
+<div class="wrapper">
+  <div class="parallax filter-black">
+    <div class="parallax-image">
+      <img src="{% static 'front/img/1.jpeg' %}" alt="..." />
+    </div>
+    <div class="small-info">
+      <h1>Masak Yuk</h1>
+      <h3>Resep makanan Nusantara</h3>
+    </div>
+  </div>
+
+  <div class="section section-gray">
+    <div class="container">
+      <center><h2 class="text-black">Resep masakan</h2></center>
+      <div class="row">
+        {% for idMeal, strMeal,strDrinkAlternate, strCategory, strArea, strInstructions, strTags, strYoutube, strMealThumb,i in mylist %}
+        <div class="col-md-6">
+          <div class="card">
+            <div class="image">
+              <img src="{{i}}" alt="..." />
+              <div class="filter filter-azure">
+                <button type="button" class="btn btn-neutral btn-round"><i class="fa fa-heart-o"></i> Readmore</button>
+              </div>
+            </div>
+            <div class="content">
+              <p class="category">{{idmeal}}</p>
+              <a class="card-link" href="#">
+                <h4 class="">{{strMeal}}</h4>
+                <h4 class="">{{strCategory}}</h4>
+                <h4 class="">{{strYoutube}}</h4>
+                <h4 class="">{{idMeal}}</h4>
+                <h4 class="">{{strArea}}</h4>
+                <h4 class="">{{strMealThumb}}</h4>
+              </a>
+              <div class="footer">
+                <div class="author">
+                  <a class="card-link" href="#">
+                    <img src="{% static 'back/img/rafi.jpeg' %}" alt="..." class="avatar" />
+                    <span> {{user}} </span>
+                  </a>
+                </div>
+                <div class="stats pull-right"><i class="fa fa-clock-o"></i> {{waktu}}</div>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!-- section -->
+
+  <footer class="footer footer-big footer-default top-border">
+    <div class="container">
+      <h3 class="title">Recommendations</h3>
+      <div class="row">
+        <div class="col-md-5">
+          <div class="card card-background">
+            <div class="image">
+              <img src="{% static 'front/img/10.jpeg' %}" alt="..." />
+              <div class="filter"></div>
+            </div>
+            <div class="content">
+              <p class="category">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+
+                <a href="#" class="pull-right">
+                  <i class="fa fa-heart"></i>
+                </a>
+              </p>
+
+              <a href="#"
+                ><br />
+                <h4 class="title">Exclusive Penthouse in Downtown<br /></h4>
+              </a>
+            </div>
+            <div class="footer">
+              <div class="author">
+                <a href="{% static 'front/img/14.jpeg' %}">
+                  <img src="{% static 'front/img/rafi.jpeg' %}" alt="..." class="avatar" />
+                  <span>Rafi Rahmadani</span>
+                </a>
+              </div>
+              <div class="stats pull-right">
+                <a href=""> <i class="fa fa-comments"></i> 89 </a>
+              </div>
+              <div class="stats pull-right">
+                <a href="#"> <i class="fa fa-heart"></i> 341 </a>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+        </div>
+
+        <div class="col-md-7">
+          <div class="card card-background">
+            <div class="image">
+              <img src="{% static 'front/img/9.jpeg' %}" alt="..." />
+              <div class="filter"></div>
+            </div>
+            <div class="content">
+              <p class="category">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+
+                <a href="#" class="pull-right btn-hover"> <i class="fa fa-heart-o"></i> Like </a>
+              </p>
+              <a href="#"
+                ><br />
+                <h4 class="title">How to Learn Architectural Drafting Quickly and Design Your Own Custom Home Floor Plans</h4>
+              </a>
+            </div>
+            <div class="footer">
+              <div class="author">
+                <a href="#">
+                  <img src="{% static 'front/img/rafi.jpeg' %}" alt="..." class="avatar" />
+                  <span> Rafi Rahmadani</span>
+                </a>
+              </div>
+              <div class="stats pull-right">
+                <a href="#"> <i class="fa fa-comments"></i> 143 </a>
+              </div>
+              <div class="stats pull-right">
+                <a href="#"> <i class="fa fa-heart"></i> 745 </a>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+        </div>
+
+        <div class="col-md-8">
+          <div class="card card-background">
+            <div class="image">
+              <img src="{% static 'front/img/11.jpeg' %}" alt="..." />
+              <div class="filter"></div>
+            </div>
+            <div class="content">
+              <p class="category">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+
+                <a href="#" class="pull-right">
+                  <i class="fa fa-heart"></i>
+                </a>
+              </p>
+
+              <a href=""
+                ><br />
+                <h4 class="title">10 Free tips that will make you avoid the most common mistakes in business<br /></h4>
+              </a>
+            </div>
+            <div class="footer">
+              <div class="author">
+                <a href="">
+                  <img src="{% static 'front/img/rafi.jpeg' %}" alt="..." class="avatar" />
+                  <span>Rafi Rahmadani</span>
+                </a>
+              </div>
+              <div class="stats pull-right">
+                <a href="#"> <i class="fa fa-comments"></i> 589 </a>
+              </div>
+              <div class="stats pull-right">
+                <a href="#"> <i class="fa fa-heart"></i> 2,386 </a>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+        </div>
+
+        <div class="col-md-4">
+          <div class="card card-background">
+            <div class="image">
+              <img src="{% static 'front/img/14.jpeg' %}" alt="..." />
+              <div class="filter"></div>
+            </div>
+            <div class="content">
+              <p class="category">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+
+                <a href="" class="pull-right">
+                  <i class="fa fa-heart"></i>
+                </a>
+              </p>
+              <a href=""
+                ><br />
+                <h4 class="title">What music to listen to when you work?</h4>
+              </a>
+            </div>
+            <div class="footer">
+              <div class="author">
+                <a href="">
+                  <img src="{% static 'front/img/rafi.jpeg' %}" alt="..." class="avatar" />
+                  <span> Rafi Rahmadani</span>
+                </a>
+              </div>
+              <div class="stats pull-right">
+                <a href="#"> <i class="fa fa-comments"></i> 23 </a>
+              </div>
+              <div class="stats pull-right">
+                <a href="#"> <i class="fa fa-heart"></i> 225 </a>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="social-area text-center">
+        <h5>Join us on</h5>
+        <a href="#" class="btn btn-social btn-round btn-facebook">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="#" class="btn btn-social btn-round btn-twitter">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#" class="btn btn-social btn-round btn-google">
+          <i class="fa fa-google-plus"></i>
+        </a>
+        <a href="#" class="btn btn-social btn-round btn-pinterest">
+          <i class="fa fa-pinterest"></i>
+        </a>
+        <a href="#" class="btn btn-social btn-round btn-linkedin">
+          <i class="fa fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+</div>
+<!-- wrapper -->
+{%endblock content%}
