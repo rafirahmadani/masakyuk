@@ -1,7 +1,8 @@
 from blog.models import Artikel
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from blog.models import Artikel, Kategori
+from blog.models import Artikel, Kategori,Resep
+import requests
 
 
 
@@ -22,6 +23,17 @@ def artikel(request):
         'artikel' : artikel,
     }
     return render(request, template_name, context)
+
+def resep(request):
+    template_name =  "back/tabel_resep.html"
+   
+    resep = Resep.objects.all()
+    context = {
+        'title' :  'tabel artikel',
+        'resep' : resep,
+    }
+    return render(request, template_name, context)
+
 
 def tambah_artikel(request):
     template_name =  "back/tambah_artikel.html"
@@ -85,4 +97,57 @@ def users(request):
         'list_user' : list_user,
     }
     return render(request, template_name, context)
+
+def sinkron_resep(request):
+        url = "https://www.themealdb.com/api/json/v1/1/search.php?s=Kumpir"
+        data = requests.get(url).json()
+        for d in data['meals']:
+            cek_berita = Resep.objects.filter(idMeal=d['idMeal'])
+            if cek_berita:
+                print('data sudah ada')
+                c = cek_berita.first()
+                c.idMeal=d['idMeal']
+                c.save()
+            else: 
+                #jika belum ada maka tulis baru kedatabase
+                b = Resep.objects.create(
+                    idMeal= d['idMeal'],
+                    strMeal = d['strMeal'],
+                    strDrinkAlternate = d['strDrinkAlternate'],
+                    strCategory = d['strCategory'],
+                    strArea = d['strArea'],
+                    strInstructions = d['strInstructions'],
+                    strTags= d['strTags'],
+                    strYoutube = d['strYoutube'],
+                    strMealThumb = d['strMealThumb'],
+                    strIngredient1 = d['strIngredient1'],
+                    strIngredient2= d['strIngredient2'],
+                    strIngredient3 = d['strIngredient3'],
+                    strIngredient4 = d['strIngredient4'],
+                    strIngredient5 = d['strIngredient5'],
+                    strIngredient6 = d['strIngredient6'],
+                    strIngredient7 = d['strIngredient7'],
+                    strIngredient8 = d['strIngredient8'],
+                    strIngredient9 = d['strIngredient9'],
+                    strIngredient10 = d['strIngredient10'],
+                    strIngredient11 = d['strIngredient11'],
+                    strIngredient12 = d['strIngredient12'],
+                    strIngredient13 = d['strIngredient13'],
+                    strIngredient14 = d['strIngredient14'],
+                    strMeasure1 = d['strMeasure1'],
+                    strMeasure2 = d['strMeasure2'],
+                    strMeasure3 = d['strMeasure3'],
+                    strMeasure4 = d['strMeasure4'],
+                    strMeasure5 = d['strMeasure5'],
+                    strMeasure6 = d['strMeasure6'],
+                    strMeasure7 = d['strMeasure7'],
+                    strMeasure8 = d['strMeasure8'],
+                    strMeasure9 = d['strMeasure9'],
+                    strMeasure10 = d['strMeasure10'],
+                    strMeasure11 = d['strMeasure11'],
+                    strMeasure12 = d['strMeasure12'],
+                    strMeasure13 = d['strMeasure13'],
+                    strMeasure14 = d['strMeasure14'],
+                    )  
+                return redirect(resep)
 # Create your views here.

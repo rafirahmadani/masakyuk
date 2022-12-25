@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect
 from django.db import transaction
 from django.contrib.auth.hashers import make_password
 
-from blog.models import Artikel
+from blog.models import Artikel,Resep
 from profil.models import Profil
 import requests 
 
@@ -29,105 +29,105 @@ def about(request):
     }
     return render(request, template_name, context)
 
-# def post(request):
-#     template_name = 'front/post.html '
-#     artikel = Artikel.objects.all()
-#     context = {
-#         'title':'my post',
-#         'welcome':'welcome my post',
-#         'artikel' : artikel,
-#     }
-#     return render(request, template_name, context)
 def post(request):
-    url = "https://www.themealdb.com/api/json/v1/1/search.php?f=a"
+    template_name = 'front/post.html '
+    resep = Resep.objects.all()
+    context = {
+        'title':'my post',
+        'welcome':'welcome my post',
+        'resep' : resep,
+    }
+    return render(request, template_name, context)
+# def post(request):
+#     url = "https://www.themealdb.com/api/json/v1/1/search.php?f=a"
 
-    data = requests.get(url).json()
+#     data = requests.get(url).json()
 
-    a = data['meals']
-    idMeal =[]
-    strMeal =[]
-    strDrinkAlternate =[]
-    strCategory =[]
-    strArea =[]
-    strInstructions =[]
-    strTags =[]
-    strYoutube =[]
-    strIngredient1 =[]
-    strIngredient2 =[]
-    strIngredient3 =[]
-    strIngredient4 =[]
-    strIngredient5 =[]
-    strIngredient6 =[]
-    strIngredient7 =[]
-    strIngredient8 =[]
-    strIngredient9 =[]
-    strIngredient10 =[]
-    strIngredient11 =[]
-    strIngredient12 =[]
-    strIngredient13 =[]
-    strIngredient14 =[]
-    strMeasure1 =[]
-    strMeasure2 =[]
-    strMeasure3 =[]
-    strMeasure4 =[]
-    strMeasure5 =[]
-    strMeasure6 =[]
-    strMeasure7 =[]
-    strMeasure8 =[]
-    strMeasure9 =[]
-    strMeasure10 =[]
-    strMeasure11 =[]
-    strMeasure12 =[]
-    strMeasure13 =[]
-    strMeasure14 =[]
-    strMealThumb =[]
+#     a = data['meals']
+#     idMeal =[]
+#     strMeal =[]
+#     strDrinkAlternate =[]
+#     strCategory =[]
+#     strArea =[]
+#     strInstructions =[]
+#     strTags =[]
+#     strYoutube =[]
+#     strIngredient1 =[]
+#     strIngredient2 =[]
+#     strIngredient3 =[]
+#     strIngredient4 =[]
+#     strIngredient5 =[]
+#     strIngredient6 =[]
+#     strIngredient7 =[]
+#     strIngredient8 =[]
+#     strIngredient9 =[]
+#     strIngredient10 =[]
+#     strIngredient11 =[]
+#     strIngredient12 =[]
+#     strIngredient13 =[]
+#     strIngredient14 =[]
+#     strMeasure1 =[]
+#     strMeasure2 =[]
+#     strMeasure3 =[]
+#     strMeasure4 =[]
+#     strMeasure5 =[]
+#     strMeasure6 =[]
+#     strMeasure7 =[]
+#     strMeasure8 =[]
+#     strMeasure9 =[]
+#     strMeasure10 =[]
+#     strMeasure11 =[]
+#     strMeasure12 =[]
+#     strMeasure13 =[]
+#     strMeasure14 =[]
+#     strMealThumb =[]
 
 
 
-    for i in range(len(a)):
-        f = a[i]
-        idMeal.append(f['idMeal'])
-        strMeal.append(f['strMeal'])
-        strDrinkAlternate.append(f['strDrinkAlternate'])
-        strCategory.append(f['strCategory'])
-        strArea.append(f['strArea'])
-        strInstructions.append(f['strInstructions'])
-        strTags.append(f['strTags'])
-        strYoutube.append(f['strYoutube'])
-        strIngredient1.append(f['strIngredient1'])
-        strIngredient2.append(f['strIngredient2'])
-        strIngredient3.append(f['strIngredient3'])
-        strIngredient4.append(f['strIngredient4'])
-        strIngredient5.append(f['strIngredient5'])
-        strIngredient6.append(f['strIngredient6'])
-        strIngredient7.append(f['strIngredient7'])
-        strIngredient8.append(f['strIngredient8'])
-        strIngredient9.append(f['strIngredient9'])
-        strIngredient10.append(f['strIngredient10'])
-        strIngredient11.append(f['strIngredient11'])
-        strIngredient12.append(f['strIngredient12'])
-        strIngredient13.append(f['strIngredient13'])
-        strIngredient14.append(f['strIngredient14'])
-        strMeasure13.append(f['strMeasure1'])
-        strMeasure13.append(f['strMeasure1'])
-        strMeasure3.append(f['strMeasure3'])
-        strMeasure4.append(f['strMeasure4'])
-        strMeasure5.append(f['strMeasure5'])
-        strMeasure6.append(f['strMeasure6'])
-        strMeasure7.append(f['strMeasure7'])
-        strMeasure8.append(f['strMeasure8'])
-        strMeasure9.append(f['strMeasure9'])
-        strMeasure10.append(f['strMeasure10'])
-        strMeasure11.append(f['strMeasure11'])
-        strMeasure12.append(f['strMeasure12'])
-        strMeasure13.append(f['strMeasure13'])
-        strMeasure14.append(f['strMeasure14'])
-        strMealThumb.append(f['strMealThumb'])
+#     for i in range(len(a)):
+#         f = a[i]
+#         idMeal.append(f['idMeal'])
+#         strMeal.append(f['strMeal'])
+#         strDrinkAlternate.append(f['strDrinkAlternate'])
+#         strCategory.append(f['strCategory'])
+#         strArea.append(f['strArea'])
+#         strInstructions.append(f['strInstructions'])
+#         strTags.append(f['strTags'])
+#         strYoutube.append(f['strYoutube'])
+#         strIngredient1.append(f['strIngredient1'])
+#         strIngredient2.append(f['strIngredient2'])
+#         strIngredient3.append(f['strIngredient3'])
+#         strIngredient4.append(f['strIngredient4'])
+#         strIngredient5.append(f['strIngredient5'])
+#         strIngredient6.append(f['strIngredient6'])
+#         strIngredient7.append(f['strIngredient7'])
+#         strIngredient8.append(f['strIngredient8'])
+#         strIngredient9.append(f['strIngredient9'])
+#         strIngredient10.append(f['strIngredient10'])
+#         strIngredient11.append(f['strIngredient11'])
+#         strIngredient12.append(f['strIngredient12'])
+#         strIngredient13.append(f['strIngredient13'])
+#         strIngredient14.append(f['strIngredient14'])
+#         strMeasure1.append(f['strMeasure1'])
+#         strMeasure2.append(f['strMeasure1'])
+#         strMeasure3.append(f['strMeasure3'])
+#         strMeasure4.append(f['strMeasure4'])
+#         strMeasure5.append(f['strMeasure5'])
+#         strMeasure6.append(f['strMeasure6'])
+#         strMeasure7.append(f['strMeasure7'])
+#         strMeasure8.append(f['strMeasure8'])
+#         strMeasure9.append(f['strMeasure9'])
+#         strMeasure10.append(f['strMeasure10'])
+#         strMeasure11.append(f['strMeasure11'])
+#         strMeasure12.append(f['strMeasure12'])
+#         strMeasure13.append(f['strMeasure13'])
+#         strMeasure14.append(f['strMeasure14'])
+#         strMealThumb.append(f['strMealThumb'])
         
-    mylist = zip(idMeal, strMeal,strDrinkAlternate, strCategory, strArea, strInstructions, strTags, strYoutube,strIngredient1, strMealThumb,)
-    context ={'mylist':mylist}
+#     mylist = zip(idMeal, strMeal,strDrinkAlternate, strCategory, strArea, strInstructions, strTags, strYoutube,strIngredient1, strMealThumb,)
+#     context ={'mylist':mylist}
 
-    return render(request, 'front/post.html', context)
+#     return render(request, 'front/post.html', context)
 
 def contac_us(request):
     template_name = 'front/contac_us.html'

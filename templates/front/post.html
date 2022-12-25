@@ -15,24 +15,22 @@
     <div class="container">
       <center><h2 class="text-black">Resep masakan</h2></center>
       <div class="row">
-        {% for idMeal, strMeal,strDrinkAlternate, strCategory, strArea, strInstructions, strTags, strYoutube, strMealThumb,i in mylist %}
+        {% for a in resep %}
         <div class="col-md-6">
           <div class="card">
             <div class="image">
-              <img src="{{i}}" alt="..." />
+              <img src="{{a.strMealThumb}}" alt="..." />
               <div class="filter filter-azure">
                 <button type="button" class="btn btn-neutral btn-round"><i class="fa fa-heart-o"></i> Readmore</button>
               </div>
             </div>
             <div class="content">
-              <p class="category">{{idmeal}}</p>
-              <a class="card-link" href="#">
-                <h4 class="">{{strMeal}}</h4>
-                <h4 class="">{{strCategory}}</h4>
-                <h4 class="">{{strYoutube}}</h4>
-                <h4 class="">{{idMeal}}</h4>
-                <h4 class="">{{strArea}}</h4>
-                <h4 class="">{{strMealThumb}}</h4>
+              <p class="category">{{a.idmeal}}</p>
+              <a class="card-link" href="{{a.strYoutube}}">
+                <h4 class="">{{a.strMeal}}</h4>
+                <h4 class="">{{a.strCategory}}</h4>
+                <h4 class="">{{a.idMeal}}</h4>
+                <h4 class="">{{a.strArea}}</h4>
               </a>
               <div class="footer">
                 <div class="author">
